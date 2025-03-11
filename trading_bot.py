@@ -20,7 +20,7 @@ logging.basicConfig(
 )
 
 class RiskManager:
-    def __init__(self, max_risk_per_trade: float = 0.01, max_trades: int = 2):
+    def __init__(self, max_risk_per_trade: float = 0.1, max_trades: int = 2):
         """
         Initialize risk management parameters
         
@@ -38,15 +38,9 @@ class RiskManager:
         if stop_loss == 0:
             return 0.01  # Minimum lot size if no stop loss
             
-        # Calculate available margin
-        free_margin = account_info['margin_free']
-        margin_required_per_lot = symbol_info['margin_initial']
+        # Calculate risk amount with additional safety factor
+        risk_amount = account_info['balance'] * self.max_risk_per_trade * 0.8  # Added 0.8 safety factor
         
-        # Calculate maximum lots based on margin
-        max_lots_by_margin = free_margin / (margin_required_per_lot * 1.5)  # Using 1.5 as safety factor
-        
-        # Calculate risk-based position size
-        risk_amount = account_info['balance'] * self.max_risk_per_trade
         pip_value = symbol_info['trade_tick_value'] * (symbol_info['point'] / symbol_info['trade_tick_size'])
         stop_loss_pips = abs(entry_price - stop_loss) / symbol_info['point']
         
@@ -126,16 +120,17 @@ class TradingBot:
         self.config = self.load_config()
         
     def load_config(self) -> dict:
-        """Load configuration with more conservative defaults"""
+        """Load configuration with fixed stop loss settings"""
         config_file = 'trading_config.json'
         default_config = {
-            'take_profit_multiplier': 1.5,     # Reduced from 2.0
+            'take_profit_multiplier': 2.0,    # 2x the stop loss distance
             'trailing_stop': True,
-            'trailing_stop_activation': 0.6,    # Increased from 0.5
-            'max_spread': 10,                  # Reduced from 20
+            'trailing_stop_activation': 0.6,
+            'max_spread': 10,
+            'fixed_stop_loss_usd': 3.0,       # Added fixed stop loss in USD
             'trading_hours': {
-                'start': '10:00',              # Later start
-                'end': '16:00'                 # Earlier end
+                'start': '10:00',
+                'end': '16:00'
             }
         }
         
@@ -203,8 +198,7 @@ class TradingBot:
     
     def calculate_signals(self, dfs: Dict[int, pd.DataFrame]) -> Dict[str, float]:
         """
-        Calculate trading signals using multiple timeframe analysis
-        Returns dict with signal strength and suggested entry/exit points
+        Calculate trading signals with fixed $3 stop loss
         """
         signals = {'strength': 0, 'entry': 0, 'stop_loss': 0, 'take_profit': 0}
         
@@ -238,12 +232,26 @@ class TradingBot:
             # Calculate entry, stop loss and take profit levels
             if abs(signals['strength']) >= 0.5:  # Minimum signal threshold
                 current_price = mt5.symbol_info_tick(self.symbol).ask
-                atr = self.calculate_atr(dfs[self.timeframes[0]])  # Use shortest timeframe for ATR
+                fixed_stop_loss_usd = 3.0  # Fixed $3 stop loss
+                
+                # Convert USD stop loss to price points
+                point = mt5.symbol_info(self.symbol).point
+                pip_value = mt5.symbol_info(self.symbol).trade_tick_value
+                points_for_three_dollars = (fixed_stop_loss_usd / pip_value) * point
                 
                 signals['entry'] = current_price
-                signals['stop_loss'] = current_price - (atr * 1.5) if signals['strength'] > 0 else current_price + (atr * 1.5)
+                # Set stop loss $3 away from entry
+                signals['stop_loss'] = (
+                    current_price - points_for_three_dollars if signals['strength'] > 0 
+                    else current_price + points_for_three_dollars
+                )
+                
+                # Calculate take profit based on stop loss distance
                 tp_distance = abs(current_price - signals['stop_loss']) * self.config['take_profit_multiplier']
-                signals['take_profit'] = current_price + tp_distance if signals['strength'] > 0 else current_price - tp_distance
+                signals['take_profit'] = (
+                    current_price + tp_distance if signals['strength'] > 0 
+                    else current_price - tp_distance
+                )
                 
         except Exception as e:
             logging.error(f"Error calculating signals: {e}")

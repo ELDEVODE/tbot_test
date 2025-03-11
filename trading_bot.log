@@ -232,3 +232,65 @@
 2025-03-11 17:39:21,767 - INFO - Active trades: 2, Signal strength: 1.00
 2025-03-11 17:40:21,822 - INFO - Maximum number of trades reached
 2025-03-11 17:40:21,901 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:41:21,927 - INFO - Maximum number of trades reached
+2025-03-11 17:41:21,929 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:42:21,979 - INFO - Maximum number of trades reached
+2025-03-11 17:42:21,991 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:42:27,111 - INFO - Bot stopped manually
+2025-03-11 17:44:29,542 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=0.0, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:44:29,545 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:44:29,546 - INFO - Balance: 4929.72 EUR
+2025-03-11 17:44:29,547 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:44:29,640 - INFO - Maximum number of trades reached
+2025-03-11 17:44:29,641 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:45:29,697 - ERROR - Error in main loop: float division by zero
+2025-03-11 17:46:29,735 - ERROR - Error in main loop: float division by zero
+2025-03-11 17:47:17,473 - INFO - Bot stopped manually
+2025-03-11 17:47:17,475 - INFO - Bot shutdown complete
+2025-03-11 17:47:25,448 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=4.740433828905679, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:47:25,449 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:47:25,449 - INFO - Balance: 4929.75 EUR
+2025-03-11 17:47:25,450 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:47:26,017 - INFO - Order placed successfully: 33370220
+2025-03-11 17:47:26,018 - INFO - Active trades: 1, Signal strength: 1.00
+2025-03-11 17:48:00,769 - INFO - Bot stopped manually
+2025-03-11 17:48:01,314 - INFO - Bot shutdown complete
+2025-03-11 17:48:12,764 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=4.740433828905679, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:48:12,764 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:48:12,766 - INFO - Balance: 4929.2 EUR
+2025-03-11 17:48:12,766 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:48:13,350 - INFO - Order placed successfully: 33370250
+2025-03-11 17:48:13,351 - INFO - Active trades: 1, Signal strength: 1.00
+2025-03-11 17:49:02,645 - INFO - Bot stopped manually
+2025-03-11 17:49:03,168 - INFO - Bot shutdown complete
+2025-03-11 17:49:08,309 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=4.740433828905679, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:49:08,309 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:49:08,310 - INFO - Balance: 4928.78 EUR
+2025-03-11 17:49:08,310 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:49:08,867 - INFO - Order placed successfully: 33370356
+2025-03-11 17:49:08,869 - INFO - Active trades: 1, Signal strength: 0.60
+2025-03-11 17:50:09,396 - INFO - Order placed successfully: 33370393
+2025-03-11 17:50:09,397 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:51:09,416 - INFO - Maximum number of trades reached
+2025-03-11 17:51:09,417 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:52:09,446 - INFO - Maximum number of trades reached
+2025-03-11 17:52:09,450 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:52:47,754 - INFO - Bot stopped manually
+2025-03-11 17:52:48,834 - INFO - Bot shutdown complete
+2025-03-11 17:52:52,539 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=7.459578637922587, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:52:52,540 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:52:52,540 - INFO - Balance: 4929.96 EUR
+2025-03-11 17:52:52,541 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:52:52,566 - ERROR - Error in main loop: 'float' object is not iterable
+2025-03-11 17:52:54,812 - INFO - Bot stopped manually
+2025-03-11 17:52:54,813 - INFO - Bot shutdown complete
+2025-03-11 17:53:27,178 - INFO - MT5 connected: TerminalInfo(community_account=False, community_connection=False, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=False, build=4885, maxbars=100000, codepage=0, ping_last=180277, community_balance=0.0, retransmission=7.459578637922587, company='MetaQuotes Ltd.', name='MetaTrader 5', language='English', path='C:\\Program Files\\MetaTrader 5', data_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\D0E8209F77C8CF37AD8BF550E51FF075', commondata_path='C:\\Users\\ayoel\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-03-11 17:53:27,179 - INFO - Account: 107018813 (Ava Trade Ltd.)
+2025-03-11 17:53:27,180 - INFO - Balance: 4929.96 EUR
+2025-03-11 17:53:27,180 - INFO - Starting trading bot for EURUSD...
+2025-03-11 17:53:27,723 - INFO - Order placed successfully: 33370601
+2025-03-11 17:53:27,725 - INFO - Active trades: 1, Signal strength: 1.00
+2025-03-11 17:54:28,265 - INFO - Order placed successfully: 33370712
+2025-03-11 17:54:28,266 - INFO - Active trades: 2, Signal strength: 1.00
+2025-03-11 17:54:46,821 - INFO - Bot stopped manually
+2025-03-11 17:54:47,852 - INFO - Bot shutdown complete
