@@ -38,9 +38,15 @@ class RiskManager:
         if stop_loss == 0:
             return 0.01  # Minimum lot size if no stop loss
             
-        # Calculate risk amount with additional safety factor
-        risk_amount = min(account_info['balance'] * self.max_risk_per_trade * 0.7, 1.0)  # Max $1 risk per trade
+        # Calculate available margin
+        free_margin = account_info['margin_free']
+        margin_required_per_lot = symbol_info['margin_initial']
         
+        # Calculate maximum lots based on margin
+        max_lots_by_margin = free_margin / (margin_required_per_lot * 1.5)  # Using 1.5 as safety factor
+        
+        # Calculate risk-based position size
+        risk_amount = account_info['balance'] * self.max_risk_per_trade
         pip_value = symbol_info['trade_tick_value'] * (symbol_info['point'] / symbol_info['trade_tick_size'])
         stop_loss_pips = abs(entry_price - stop_loss) / symbol_info['point']
         
@@ -429,7 +435,7 @@ if __name__ == "__main__":
     bot = TradingBot(
         symbol="EURUSD",
         timeframes=[mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1, mt5.TIMEFRAME_H4],
-        risk_per_trade=0.001,
+        risk_per_trade=0.02,
         max_trades=2
     )
     
