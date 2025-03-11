@@ -280,10 +280,10 @@ class TradingBot:
             return None
             
         # Check trading hours
-        current_time = datetime.now().strftime('%H:%M')
-        if not (self.config['trading_hours']['start'] <= current_time <= self.config['trading_hours']['end']):
-            logging.info("Outside trading hours")
-            return None
+        # current_time = datetime.now().strftime('%H:%M')
+        # if not (self.config['trading_hours']['start'] <= current_time <= self.config['trading_hours']['end']):
+        #     logging.info("Outside trading hours")
+        #     return None
             
         # Check spread
         symbol_info = mt5.symbol_info(self.symbol)
